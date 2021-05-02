@@ -1,20 +1,16 @@
 package main
 
 import (
-	weekone "github.com/jacintojosh/weekone"
-	weekzero "github.com/jacintojosh/weekzero"
+	rest "github.com/jacintojosh/rest"
+	"github.com/labstack/echo/v4"
 )
 
 func main() {
-	weekOneTests()
-	weekZeroTest()
+	e := echo.New()
+	registerControllers(e)
+	e.Logger.Fatal(e.Start(":9091"))
 }
 
-func weekOneTests() {
-	weekone.Test()
-}
-
-func weekZeroTest() {
-	weekzero.Exercise1()
-	weekzero.Exercise2()
+func registerControllers(e *echo.Echo) {
+	rest.InitServerHandler(e)
 }
