@@ -6,7 +6,6 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-
 type healthCheckResponse struct {
 	Status string `json:"status"`
 }
@@ -21,7 +20,7 @@ type serverHandler struct{}
 func InitServerHandler(e *echo.Echo) {
 	// Controllers for the Handlers entrypoint
 	h := &serverHandler{}
-	// Structure is route, <handler-function>, <middleware...> 
+	// Structure is route, <handler-function>, <middleware...>
 	e.GET("/health", h.Health)
 	e.GET("/hello-world", h.HelloWorld)
 }
