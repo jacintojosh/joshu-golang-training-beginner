@@ -1,4 +1,4 @@
-package main
+package weekzero
 
 import (
 	"encoding/json"
@@ -7,7 +7,7 @@ import (
 	"reflect" //Package reflect implements run-time reflection, allowing a program to manipulate objects with arbitrary types.
 )
 
-func exercise1() {
+func Exercise1() {
 	// TODO: task #1 - Why is it not working?
 
 	// Only numeric types, strings and bools can be constants.
@@ -51,7 +51,7 @@ type Employee struct {
 	Domicile       Domicile `json:"domicile"`
 }
 
-func exercise2() {
+func Exercise2() {
 	// TODO: task #1 - give me a skeleton!
 	// Missing comma near salary, fixed it.
 	data := string(`
@@ -88,9 +88,4 @@ func exercise2() {
 	}
 
 	fmt.Println("[Exercise 2]: All passed!")
-}
-
-func main() {
-	exercise1()
-	exercise2()
 }
