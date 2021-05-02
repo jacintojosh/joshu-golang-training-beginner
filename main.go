@@ -1,10 +1,20 @@
 package main
 
 import (
+	weekone "github.com/jacintojosh/weekone"
 	weekzero "github.com/jacintojosh/weekzero"
 )
 
 func main() {
-	weekzero.Exercise1()
+	weekOneTests()
+	weekZeroTest()
 }
 
+func weekOneTests() {
+	weekone.Test()
+}
+
+func weekZeroTest() {
+	weekzero.Exercise1()
+	weekzero.Exercise2()
+}
