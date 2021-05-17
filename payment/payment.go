@@ -3,6 +3,8 @@ package payment
 import (
 	"context"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 type paymentCodeStatus struct {
@@ -19,7 +21,7 @@ var PaymentCodeStatus = paymentCodeStatus{
 
 type (
 	PaymentCode struct {
-		ID             string    `json:"id"`
+		ID             uuid.UUID `json:"id"`
 		Name           string    `json:"name"`
 		PaymentCode    string    `json:"payment_code"`
 		Status         string    `json:"status"`
