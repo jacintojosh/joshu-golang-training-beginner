@@ -14,7 +14,7 @@ END $$;
 
 
 CREATE TABLE IF NOT EXISTS "payment_codes" (
-    "id" VARCHAR(255) PRIMARY KEY NOT NULL DEFAULT (uuid_generate_v4()),
+    "id" uuid PRIMARY KEY NOT NULL DEFAULT (uuid_generate_v4()),
     "payment_code" VARCHAR(255) NOT NULL,
     "name" VARCHAR(255) NOT NULL,
     "status" payment_status,
