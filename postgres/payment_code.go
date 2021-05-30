@@ -36,6 +36,11 @@ var (
 )
 
 func (r paymentCodeRepository) Create(ctx context.Context, p *payment.PaymentCode) (err error) {
+	// TODO: Make handling this more graceful by setting name and paymentcode to pointer string type
+	if p.Name == "" || p.PaymentCode == "" {
+		err = errors.ValidationError("Payment code or name should not be empty.")
+		return
+	}
 	sqlStr, args, err := sq.
 		Insert(paymentCodeTableName).
 		Columns("name", "payment_code", "status").
